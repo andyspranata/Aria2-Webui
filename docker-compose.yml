@@ -1,0 +1,15 @@
+version: '3'
+services: 
+
+  aria2c-webui:
+    build: .
+    ports: 
+      - 6800:6800
+      - 6880:80
+    environment:
+      - PGID=100
+      - PUID=1001 
+    volumes:
+      - ~/App-data/Aria2/storage:/data
+      - ~/App-data/Aria2/config:/conf
+      - ~/App-data/Aria2/aria2-webui:/aria2-webui
